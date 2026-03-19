@@ -201,9 +201,11 @@
         // Регистрация Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker зарегистрирован:', reg.scope))
-                    .catch(err => console.log('Service Worker не зарегистрирован:', err));
+                navigator.serviceWorker.register('/planner-pwa/sw.js')
+                    .then(reg => {
+                        console.log('✓ Service Worker зарегистрирован:', reg.scope);
+                    })
+                    .catch(err => console.log('✗ Service Worker не зарегистрирован:', err));
             });
         }
 
